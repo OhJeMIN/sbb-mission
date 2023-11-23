@@ -1,6 +1,10 @@
 package com.ll.sbbmission;
 
 
+import com.ll.sbbmission.answer.Answer;
+import com.ll.sbbmission.answer.AnswerRepository;
+import com.ll.sbbmission.question.Question;
+import com.ll.sbbmission.question.QuestionRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,7 +24,7 @@ class SbbApplicationTests {
     private QuestionRepository questionRepository;
 
     @Autowired
-    private AnswerRepository  answerRepository ;
+    private AnswerRepository answerRepository ;
 
     @Transactional
     @Test
