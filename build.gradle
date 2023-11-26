@@ -48,6 +48,9 @@ dependencies {
     //H2 데이터베이스
     runtimeOnly 'com.h2database:h2'
 
+    //스프링 시큐리티
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE'
 
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 }
