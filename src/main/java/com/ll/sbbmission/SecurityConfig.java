@@ -25,9 +25,14 @@ public class SecurityConfig {
                 .headers((headers) -> headers
                         .addHeaderWriter(new XFrameOptionsHeaderWriter(
                                 XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN)))
-                .formLogin((formLogin) -> formLogin
+                .formLogin((formLogin) -> formLogin //스프링 시큐리티를 사용한 로그인
                         .loginPage("/user/login")
                         .defaultSuccessUrl("/"))
+                .logout((logout) -> logout // 스프링 시큐리티를 사용한 로그 아웃
+                        .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
+                        .logoutSuccessUrl("/")
+                        .invalidateHttpSession(true))
+
         ;
         return http.build();
     }
